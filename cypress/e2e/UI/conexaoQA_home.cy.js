@@ -11,11 +11,14 @@ describe('página inicial', () => {
             .and('have.class', 'x-large')
     })
 
-    it.only('seleciona um elemento com o contains', () => {
+    it('seleciona um elemento com o contains', () => {
         
         cy.contains('h1', 'QAs')
             .should('have.text', 'Conectando QAs ...')
 
+    })
+          
+    it('valida propriedade css', () => {
         cy.get('[data-test=landing-register]')
             .should('have.css', 'color', 'rgb(255, 255, 255)')    
     })
