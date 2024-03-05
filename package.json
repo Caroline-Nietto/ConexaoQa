@@ -12,5 +12,6 @@
   },
   "author": "Caroline Nietto",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {}
 }

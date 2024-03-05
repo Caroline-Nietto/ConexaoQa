@@ -19,7 +19,20 @@ describe('página inicial', () => {
     })
           
     it('valida propriedade css', () => {
+        // valida se o texto do botão registrar é branco
         cy.get('[data-test=landing-register]')
             .should('have.css', 'color', 'rgb(255, 255, 255)')    
+    })
+
+    it.only('seleciona um elemento utilizando filter', () => {
+        // filtrar utilizando o comando filter
+        cy.get('a')
+            .filter('.btn-primary')
+            .should('have.text', 'Cadastrar')
+
+        // filtrar utilizando o comando eq do botao login
+        cy.get('a')    
+            .eq(6)        
+            .should('have.text', 'Login')
     })
 })

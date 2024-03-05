@@ -9,7 +9,7 @@ module.exports = defineConfig({
             runMode: 1,
             openMode: 0,
         },
-
+        video: true,
         // eslint-disable-next-line
         setupNodeEvents(on, config) {
         // implement node event listeners here
