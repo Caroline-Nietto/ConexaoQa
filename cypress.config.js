@@ -1,5 +1,7 @@
 const { defineConfig } = require('cypress');
 
+const fs = require('fs')
+
 module.exports = defineConfig({
     e2e: {
         baseUrl: 'http://localhost:3000',
@@ -12,7 +14,19 @@ module.exports = defineConfig({
         video: true,
         // eslint-disable-next-line
         setupNodeEvents(on, config) {
-        // implement node event listeners here
+        
+            on('task', {
+
+                msgConsole() {
+                    console.log('Mensagem do console.log dentro do NodeJs')
+
+                    return null
+                },
+
+                lerPasta(caminho) {
+                    return fs.readdirSync(caminho).length
+                }
+            })
         },
     },
 });
