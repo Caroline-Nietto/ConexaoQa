@@ -2,13 +2,13 @@ describe('página de login', () => {
 
     const CAMPO_EMAIL = 'login-email'
     const CAMPO_SENHA = 'login-password'
-    const BOTAO_LOGIN = 'login_submit'
+    const BOTAO_LOGIN = 'login-submit'
 
     beforeEach(() => {
         cy.visit('/login')
     })
 
-    it('faz o login válido', () => {
+    it('faz o login válido', { tags: ['@login', '@smoke'] }, () => {
         
         cy.intercept('GET', '/api/profile/me')
             .as('apiLogin')
@@ -39,7 +39,7 @@ describe('página de login', () => {
        
     })
 
-    it('faz login inválido', () => {
+    it('faz login inválido', { tags: '@smoke' }, () => {
 
         cy.intercept('POST', '/api/auth')
             .as('apiLogin')
@@ -65,7 +65,7 @@ describe('página de login', () => {
         
     })
 
-    it.only('valida a digitação de um email invalido', () => {
+    it('valida a digitação de um email invalido', () => {
 
         // preencher o email inválido e da Tab no campo
         cy.getElement(CAMPO_EMAIL)

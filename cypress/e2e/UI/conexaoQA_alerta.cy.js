@@ -1,7 +1,7 @@
 describe('alerta de login', () => {
     
 
-    it('valida o alerta de credencial inválida', () => {
+    it('valida o alerta de credencial inválida', { tags: ['@smoke', '@login'] }, () => {
 
         // Faz o spy na hora
         cy.clock()

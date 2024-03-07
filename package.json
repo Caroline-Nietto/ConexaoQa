@@ -13,5 +13,7 @@
   "author": "Caroline Nietto",
   "license": "ISC",
   "description": "",
-  "devDependencies": {}
+  "devDependencies": {
+    "@cypress/grep": "^4.0.1"
+  }
 }

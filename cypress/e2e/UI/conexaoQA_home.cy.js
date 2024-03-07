@@ -4,7 +4,7 @@ describe('página inicial', () => {
         cy.visit('/') 
     })
 
-    it('valida o título da página inicial', () => {
+    it('valida o título da página inicial', { tags: '@smoke' }, () => {
               
         cy.get('[data-test=landing-title]')
             .should('have.text', 'Conectando QAs ...')
@@ -24,7 +24,7 @@ describe('página inicial', () => {
             .should('have.css', 'color', 'rgb(255, 255, 255)')    
     })
 
-    it.only('seleciona um elemento utilizando filter', () => {
+    it('seleciona um elemento utilizando filter', () => {
         // filtrar utilizando o comando filter
         cy.get('a')
             .filter('.btn-primary')
